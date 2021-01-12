@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cd dist && node index.js",
     "start:dev": "ts-node-dev index.ts",
-    "build": "tsc --project ./ --outDir ./dist"
+    "build": "rm -rf dist && tsc --project ./ --outDir ./dist"
   },
   "devDependencies": {
     "ts-node-dev": "^1.1.1",
