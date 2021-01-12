@@ -1,10 +1,10 @@
-import { Request, Response } from 'express'
+import { NowRequest, NowResponse } from '@vercel/node'
 import axios from 'axios'
 import dotenv from 'dotenv'
 import Shopee from '../@types/ShopeeResponse'
 dotenv.config()
 
-const ShopeeFetch = async (req: Request, res: Response) => {
+const ShopeeFetch = async (req: NowRequest, res: NowResponse) => {
   const keyword = req.query.keyword ?? null
 
   const URL = 'https://shopee.co.id/api/v2/search_items/'

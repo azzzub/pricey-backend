@@ -1,5 +1,13 @@
 {
-  "builds": [{ "src": "/dist/*.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/.*", "dest": "/dist/index.js" }],
+  "builds": [
+    { "src": "/dist/*.js", "use": "@vercel/node" },
+    { "src": "/dist/src/*.js", "use": "@vercel/node" }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/dist/index.js" },
+    { "source": "/tokped/simple", "destination": "/dist/src/TokpedFetch.js" },
+    { "source": "/shopee/simple", "destination": "/dist/src/ShopeeFetch.js" },
+    { "source": "/ecom/simple", "destination": "/dist/src/EcomFetch.js" }
+  ],
   "alias": ["pricey-backend"]
 }

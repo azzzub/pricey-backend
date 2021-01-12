@@ -1,5 +1,5 @@
 import { NowResponse } from '@vercel/node'
 
 module.exports = (_: any, res: NowResponse) => {
-  res.json({ message: 'hello there!' })
+  res.status(404).json({ message: 'where u wanna go?' })
 }

@@ -1,11 +1,12 @@
-import { Request, Response } from 'express'
+import { NowRequest, NowResponse } from '@vercel/node'
 import axios from 'axios'
 import TokpedFinalResponse from '../@types/TokpedFinalResponse'
 import finalArray from '../helper/arraySorting'
 
-const EcomFetch = async (req: Request, res: Response) => {
-  const urlTokped = 'http://' + req.get('host') + '/tokped/simple'
-  const urlShopee = 'http://' + req.get('host') + '/shopee/simple'
+module.exports = async (req: NowRequest, res: NowResponse) => {
+  const hostUrl = 'localhost:3000'
+  const urlTokped = 'http://' + hostUrl + '/tokped/simple'
+  const urlShopee = 'http://' + hostUrl + '/shopee/simple'
   const mergedArray: any[] = []
   const keyword = req.query.keyword ?? null
 
@@ -60,5 +61,3 @@ const EcomFetch = async (req: Request, res: Response) => {
     })
   }
 }
-
-export default EcomFetch

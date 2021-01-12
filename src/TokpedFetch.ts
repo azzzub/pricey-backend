@@ -1,4 +1,4 @@
-import { Request, Response } from 'express'
+import { NowRequest, NowResponse } from '@vercel/node'
 import axios from 'axios'
 import dotenv from 'dotenv'
 import Tokped from '../@types/TokpedResponse'
@@ -6,7 +6,7 @@ import finalArray from '../helper/arraySorting'
 import TokpedFinalResponse from '../@types/TokpedFinalResponse'
 dotenv.config()
 
-const TokpedFetch = async (req: Request, res: Response) => {
+const TokpedFetch = async (req: NowRequest, res: NowResponse) => {
   const keyword = req.query.keyword ?? null
 
   const URL = 'https://gql.tokopedia.com/'
